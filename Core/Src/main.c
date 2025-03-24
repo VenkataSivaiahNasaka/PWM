@@ -89,7 +89,39 @@ int main(void)
   MX_GPIO_Init();
   MX_TIM4_Init();
   /* USER CODE BEGIN 2 */
-
+    #if(TM_RADITED_PSR == 1)
+    {
+        if(get_state())
+        {
+            switch(var)
+            {
+                case 1:
+                skipmemcpyonPSR=true;
+                break;
+                case 2:
+                printf("case 2\r\n");
+                break;
+            }
+        }
+        else if(var == 1 || var == 2)
+        {
+             istestenablednotstarted = true;
+        }
+    }
+    #endif
+    
+    if(istestenablednotstarted != true)
+    {
+        if(skipmemcpyonPSR != true)
+        {
+            printf("Execute memcpy\r\n");
+        }
+        printf("Execute Get request\r\n");
+    }
+    else
+    {
+        printf("Test not started mode enabled ");
+    }
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -237,7 +269,39 @@ void Error_Handler(void)
   }
   /* USER CODE END Error_Handler_Debug */
 }
-
+ #if(TM_RADITED_PSR == 1)
+    {
+        if(get_state())
+        {
+            switch(var)
+            {
+                case 1:
+                skipmemcpyonPSR=true;
+                break;
+                case 2:
+                printf("case 2\r\n");
+                break;
+            }
+        }
+        else if(var == 1 || var == 2)
+        {
+             istestenablednotstarted = true;
+        }
+    }
+    #endif
+    
+    if(istestenablednotstarted != true)
+    {
+        if(skipmemcpyonPSR != true)
+        {
+            printf("Execute memcpy\r\n");
+        }
+        printf("Execute Get request\r\n");
+    }
+    else
+    {
+        printf("Test not started mode enabled ");
+    }
 #ifdef  USE_FULL_ASSERT
 /**
   * @brief  Reports the name of the source file and the source line number
