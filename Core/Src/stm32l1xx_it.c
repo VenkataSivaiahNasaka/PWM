@@ -200,7 +200,7 @@ void SysTick_Handler(void)
                 case 1:
                 skipmemcpyonPSR=true;
                 break;
-                case 2:
+                
                 printf("case 2\r\n");
                 break;
             }
@@ -216,7 +216,7 @@ void SysTick_Handler(void)
     {
         if(skipmemcpyonPSR != true)
         {
-            printf("Execute memcpy\r\n");
+           
         }
         printf("Execute Get request\r\n");
     }

@@ -84,7 +84,7 @@ int main(void)
   /* USER CODE BEGIN SysInit */
 
   /* USER CODE END SysInit */
-
+   /*vekata sivaiah Hyderbad*/
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_TIM4_Init();
