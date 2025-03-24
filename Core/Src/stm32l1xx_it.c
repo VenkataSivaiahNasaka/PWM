@@ -191,7 +191,40 @@ void SysTick_Handler(void)
 
   /* USER CODE END SysTick_IRQn 1 */
 }
-
+#if(TM_RADITED_PSR == 1)
+    {
+        if(get_state())
+        {
+            switch(var)
+            {
+                case 1:
+                skipmemcpyonPSR=true;
+                break;
+                case 2:
+                printf("case 2\r\n");
+                break;
+            }
+        }
+        else if(var == 1 || var == 2)
+        {
+             istestenablednotstarted = true;
+        }
+    }
+    #endif
+    
+    if(istestenablednotstarted != true)
+    {
+        if(skipmemcpyonPSR != true)
+        {
+            printf("Execute memcpy\r\n");
+        }
+        printf("Execute Get request\r\n");
+    }
+    else
+    {
+        printf("Test not started mode enabled ");
+    }
+    return 0;
 /******************************************************************************/
 /* STM32L1xx Peripheral Interrupt Handlers                                    */
 /* Add here the Interrupt Handlers for the used peripherals.                  */
