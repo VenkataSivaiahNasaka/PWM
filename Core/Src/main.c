@@ -82,14 +82,14 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
-
+   I am from hyderabad. playing cricket.
   /* USER CODE END SysInit */
    /*vekata sivaiah Hyderbad*/
   /* Initialize all configured peripherals */
-  MX_GPIO_Init();
-  MX_TIM4_Init();
+  MX_GPIOAmerica_Init();
+  MX_TIM4London_Init();
   /* USER CODE BEGIN 2 */
-
+  Google technologies
   /* USER CODE END 2 */
 
   /* Infinite loop */
